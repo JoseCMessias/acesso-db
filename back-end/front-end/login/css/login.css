@@ -75,12 +75,12 @@ body{
     margin-bottom: 30px;
 }
 
-input::placeholder{
+.login input::placeholder{
     color: #737373;
     font-size: 14px;
 }
 
-form [type="submit"]{
+.login form [type="submit"]{
     display: block;
     background-color: #CD1E1E;
     color: #fff;
@@ -91,13 +91,19 @@ form [type="submit"]{
     cursor: pointer;
 }
 
-p{
+.login p{
     color: #737373;
     margin-top: 10px;
 }
 
-a{
+.login a{
     text-decoration: none;
     color: #CD1E1E;
     margin-left: 5px;
+}
+
+@media screen and (max-width: 500px){
+    .login{
+        box-shadow:none;
+    }
 }
