@@ -19,14 +19,14 @@ body{
 }
 
 
-.section-login{
+.section-cadastro{
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
 }
 
-.login{
+.cadastro{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +45,7 @@ body{
     display: none;
 }
 
-.login form{
+.cadastro form{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -58,7 +58,7 @@ body{
     width: 100%;
 }
 
-.login input{
+.cadastro input{
     margin-top: 10px;
     padding-left: 10px;
     background-color: #fff;
@@ -71,7 +71,7 @@ body{
     box-shadow: 1px 1px 2px rgb(146, 137, 137);
 }
 
-.login img{
+.cadastro img{
     width: 100px;
     height: auto;
     margin-bottom: 30px;
@@ -93,13 +93,19 @@ form [type="submit"]{
     cursor: pointer;
 }
 
-p{
+.cadastro p{
     color: #737373;
     margin-top: 10px;
 }
 
-a{
+.cadastro a{
     text-decoration: none;
     color: #CD1E1E;
     margin-left: 5px;
+}
+
+@media screen and (max-width: 500px){
+    .cadastro{
+        box-shadow:none;
+    }
 }
