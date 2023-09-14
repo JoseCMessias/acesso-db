@@ -57,8 +57,11 @@ app.post('/auth/cadastro', async(req, res) =>{
 
 // credenciais 
 
+const DB_USER = process.env.DB_USER
+const DB_PASS = process.env.DB_PASS
+
 mongoose
-.connect(`mongodb+srv://dmthysgo:0123@cluster0.cr4w0re.mongodb.net/DataBase?retryWrites=true&w=majority`)
+.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@apiproject.rkwieor.mongodb.net/messiasdb?retryWrites=true&w=majority`)
 .then(() => {
     app.listen(3000)
 
