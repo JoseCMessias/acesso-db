@@ -16,10 +16,10 @@ form.addEventListener('submit', async (event) => {
    const conf_senha = document.getElementById("conf_senha").value;
 
    const user_data = {
-      "nome":nome,
-      "email":email,
-      "senha":senha,
-      "conf_senha":conf_senha
+      "Nome":nome,
+      "Email":email,
+      "Senha":senha,
+      "Conf_senha":conf_senha
    };
 
    try{
