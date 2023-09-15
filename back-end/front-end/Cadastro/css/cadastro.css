@@ -77,12 +77,12 @@ body{
     margin-bottom: 30px;
 }
 
-input::placeholder{
+.cadastro input::placeholder{
     color: #737373;
     font-size: 14px;
 }
 
-form [type="submit"]{
+.cadastro form [type="submit"]{
     display: block;
     background-color: #CD1E1E;
     color: #fff;
