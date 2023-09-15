@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="/login/css/login.css">
 </head>
 <body>
     <div class="header"></div>
@@ -12,18 +12,18 @@
     <div class="section-login">
         <div class="login">
             <div class="img">
-                <img src="img/logo.svg" alt="">
+                <img src="/login/img/logo.svg" alt="">
             </div>
 
             <form id="form">
            
                 <div class="inputs">
-                    <input type="text" name="email" placeholder="seu email" autofocus class="required" oninput="emailValidate()">
+                    <input type="text" name="email" placeholder="seu email" autofocus class="required" oninput="emailValidate()" id="senha">
                     <span class="span-required">Digite um E-mail válido</span>
                 </div>
 
                 <div class="inputs">
-                    <input type="password" name="senha" placeholder="sua senha" class="required" oninput="senhaValidate()">
+                    <input type="password" name="senha" placeholder="sua senha" class="required" oninput="senhaValidate()" id="email">
                     <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
                 </div>
   
