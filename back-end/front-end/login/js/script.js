@@ -11,15 +11,17 @@ form.addEventListener("submit", async (event) => {
     const Email = document.getElementById("email").value;
     const Senha = document.getElementById("senha").value;
 
-    const login_Data = { Email, Senha };
+    const login_Data = {
+        Email,
+        Senha,
+    };
 
     try {
         const resposta = await fetch("/auth/login", {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-
             body: JSON.stringify(login_Data),
         });
 
@@ -27,12 +29,27 @@ form.addEventListener("submit", async (event) => {
 
         if (resposta.ok) {
             console.log(data.msg);
-
             localStorage.setItem("jwtToken", data.token);
-
             const user_id = data.id;
-
-            window.location.href = `/Home?id=${user_id}`;
+            const jwtToken = localStorage.getItem("jwtToken");
+            try {
+                const response = await fetch(`/user/${user_id}`, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${jwtToken}`,
+                  },
+                });
+            
+                if (response.ok) {
+                    const  dados = await response.json();
+                    window.location.href = `/Home?id=${user_id}`;
+                } else {
+                  console.log("Não autorizado ou erro ao acessar a rota protegida");
+                }
+              } catch (error) {
+                console.error("Erro ao acessar a rota protegida:", error);
+              }
         } else {
             console.log(data.msg);
         }

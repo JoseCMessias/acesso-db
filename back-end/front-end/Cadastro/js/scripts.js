@@ -35,6 +35,7 @@ form.addEventListener('submit', async (event) => {
       const data = await resposta.json();
       if(resposta.ok){
         console.log('cadastro realiazado com sucesso!')
+        window.location.href = `/`;
         }
         else{
           console.log(data.msg)
