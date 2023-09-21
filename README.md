@@ -1,4 +1,6 @@
 <h1 align="center">
+  <img width="800" alt="acesso-db" src="https://github.com/JoseCMessias/acesso-db/assets/104660308/76a4898e-6637-42fa-a539-109b33f8da12">
+</BR></BR>
   <p>Integração do Back-end com o Front-end</p>
 </h1>
 
