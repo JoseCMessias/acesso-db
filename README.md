@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="900" alt="acesso" src="https://github.com/JoseCMessias/acesso-db/assets/104660308/ae7b7719-38d9-4929-9c66-78c1680a326b">
+  <img width="856" alt="acesso1" src="https://github.com/JoseCMessias/acesso-db/assets/104660308/82410dd1-adf8-4538-87ad-924e2ce53280">
 </BR></BR>
   <p>Integração do Back-end com o Front-end</p>
 </h1>
