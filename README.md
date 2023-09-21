@@ -38,6 +38,10 @@ A integração entre back-end e front-end é essencial no desenvolvimento de apl
     ```
        npm start
      ```
+- Testa a aplicação na porta 3000 🎯
+     ```
+       http://localhost:3000
+     ```
     
 ## Características 		&#128221;
 
