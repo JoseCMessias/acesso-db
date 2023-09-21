@@ -13,7 +13,7 @@ body{
 .header{
     height: 10px;
     max-width: 100%;
-    background-color: #CD1E1E;
+    background-color: rgb(19, 136, 35);
 }
 
 
@@ -69,10 +69,9 @@ body{
     box-shadow: 1px 1px 2px rgb(146, 137, 137);
 }
 
-.login img{
-    width: 100px;
-    height: auto;
-    margin-bottom: 30px;
+.login h2{
+    color: rgb(19, 136, 35);
+    margin-bottom: 40px;
 }
 
 .login input::placeholder{
@@ -82,7 +81,7 @@ body{
 
 .login form [type="submit"]{
     display: block;
-    background-color: #CD1E1E;
+    background-color: rgb(19, 136, 35);
     color: #fff;
     font-size: 15px;
     font-family: sans-serif;

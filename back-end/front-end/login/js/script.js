@@ -34,24 +34,26 @@ form.addEventListener("submit", async (event) => {
             const jwtToken = localStorage.getItem("jwtToken");
             try {
                 const response = await fetch(`/user/${user_id}`, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${jwtToken}`,
-                  },
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${jwtToken}`,
+                    },
                 });
-            
+
                 if (response.ok) {
-                    const  dados = await response.json();
+                    const dados = await response.json();
                     window.location.href = `/Home?id=${user_id}`;
                 } else {
-                  console.log("Não autorizado ou erro ao acessar a rota protegida");
+                    alert(
+                        "Não autorizado ou erro ao acessar a rota protegida"
+                    );
                 }
-              } catch (error) {
+            } catch (error) {
                 console.error("Erro ao acessar a rota protegida:", error);
-              }
+            }
         } else {
-            console.log(data.msg);
+            alert(data.msg);
         }
     } catch (error) {
         console.error(error);

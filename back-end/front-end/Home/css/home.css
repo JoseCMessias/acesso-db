@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra-superior {
+    height: 10px;
+    width: 100%;
+    background-color: rgb(19, 136, 35);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#titulo {
+    color: rgb(19, 136, 35);
+    padding: 30px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 40px;
+    height: 100vh;
+}

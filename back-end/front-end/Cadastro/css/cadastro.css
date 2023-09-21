@@ -15,7 +15,7 @@ body{
 .header{
     height: 10px;
     max-width: 100%;
-    background-color: #CD1E1E;
+    background-color: rgb(19, 136, 35);
 }
 
 
@@ -24,6 +24,7 @@ body{
     height: 100vh;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .cadastro{
@@ -46,7 +47,7 @@ body{
 }
 
 .cadastro form{
-    display: flex;
+    display: flex;  
     flex-direction: column;
     width: 100%;
 }
@@ -71,10 +72,9 @@ body{
     box-shadow: 1px 1px 2px rgb(146, 137, 137);
 }
 
-.cadastro img{
-    width: 100px;
-    height: auto;
-    margin-bottom: 30px;
+.cadastro h2{
+    color: rgb(19, 136, 35);
+    margin-bottom: 40px;
 }
 
 .cadastro input::placeholder{
@@ -84,7 +84,7 @@ body{
 
 .cadastro form [type="submit"]{
     display: block;
-    background-color: #CD1E1E;
+    background-color: rgb(19, 136, 35);
     color: #fff;
     font-size: 15px;
     font-family: sans-serif;
@@ -100,7 +100,7 @@ body{
 
 .cadastro a{
     text-decoration: none;
-    color: #CD1E1E;
+    color: rgb(19, 136, 35);
     margin-left: 5px;
 }
 

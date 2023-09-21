@@ -21,38 +21,38 @@ app.get("/", (req, res) => {
 
 // Rotas fechadas - Rotas privadas
 app.get("/Home?:id", (req, res) => {
-    const userId = req.params.id
+    const userId = req.params.id;
     res.sendFile(__dirname + "/front-end/Home/home.html");
 });
 
-app.post('/user/:id', checkToken, async (req, res) => {
-    const id = req.params.id
+app.post("/user/:id", checkToken, async (req, res) => {
+    const id = req.params.id;
 
     // Checar se usuário existe
-    const user = await usuario.findById(id, '-Senha')
+    const user = await usuario.findById(id, "-Senha");
 
-    if(!user) {
-        return res.status(404).json({msg: 'Usuário não encontrado'})
+    if (!user) {
+        return res.status(404).json({ msg: "Usuário não encontrado" });
     }
-    res.status(200).json({ user })
-})
+    res.status(200).json({ user });
+});
 
 function checkToken(req, res, next) {
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1];
 
     if (!token) {
-        return res.status(401).json({msg: 'Acesso negado'})
+        return res.status(401).json({ msg: "Acesso negado" });
     }
 
     try {
-        const Segredo = process.env.SEGREDO
+        const Segredo = process.env.SEGREDO;
 
-        jwt.verify(token, Segredo)
+        jwt.verify(token, Segredo);
 
-        next()
+        next();
     } catch (error) {
-        res.status(400).json({msg: 'Token inválido!'})
+        res.status(400).json({ msg: "Token inválido!" });
     }
 }
 // registrar usuário
@@ -92,44 +92,49 @@ app.post("/auth/cadastro", async (req, res) => {
 
 // login
 
-app.post("/auth/login", async (req, res) =>{
-    const {Email, Senha} = req.body
-        // Validações
-        if(!Email){
-            return res.status(422).json({msg: 'Email obrigatório'})
-        }
-        if(!Senha){
-            return res.status(422).json({msg: 'Senha obrigatório'})
-        }
-        
-        // Checar se usuario existe
-        const user = await usuario.findOne({Email: Email})
-        if(!user){
-            return res.status(404).json({msg: 'Usuário não encontrado'})
-        }
-        // Checar se senha é compartivel
-        const valida_Senha = await bcrypt.compare(Senha, user.Senha) 
-        if(!valida_Senha){
-            return res.status(422).json({msg: 'Senha inválida'})
-        }
+app.post("/auth/login", async (req, res) => {
+    const { Email, Senha } = req.body;
+    // Validações
+    if (!Email) {
+        return res.status(422).json({ msg: "Email obrigatório" });
+    }
+    if (!Senha) {
+        return res.status(422).json({ msg: "Senha obrigatório" });
+    }
 
-        try {
-            const Segredo = process.env.SEGREDO
+    // Checar se usuario existe
+    const user = await usuario.findOne({ Email: Email });
+    if (!user) {
+        return res.status(404).json({ msg: "Usuário não encontrado" });
+    }
+    // Checar se senha é compartivel
+    const valida_Senha = await bcrypt.compare(Senha, user.Senha);
+    if (!valida_Senha) {
+        return res.status(422).json({ msg: "Senha inválida" });
+    }
 
-            const token = jwt.sign({
-                id: user._id
-            }, 
-                Segredo
-            );
+    try {
+        const Segredo = process.env.SEGREDO
 
-            res.status(200).json({msg: 'Login realizado com sucesso!', id: user._id, token})
+        const token = jwt.sign(
+            {
+                id: user._id,
+            },
+            Segredo
+        );
 
-        } catch (error) {
-            console.log(error)
-            res.status(500).json({msg: 'Aconteceu um erro no servidor, tente novamente mais tarde'})
-        }
-        
-})
+        res.status(200).json({
+            msg: "Login realizado com sucesso!",
+            id: user._id,
+            token,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: "Aconteceu um erro no servidor, tente novamente mais tarde",
+        });
+    }
+});
 
 // credenciais
 
